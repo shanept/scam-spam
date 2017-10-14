@@ -14,6 +14,8 @@ module.exports = (function(e) {
 
     app.post('/status/', (request, response) => {
         switch (request.body.CallStatus) {
+            case "failed":
+                console.log("Failed...");
             case "completed":
                 events.emit("disconnect", request.body.CallSid);
                 break;

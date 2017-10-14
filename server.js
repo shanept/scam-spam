@@ -14,8 +14,14 @@ module.exports = (function(e) {
 
     app.post('/status/', (request, response) => {
         switch (request.body.CallStatus) {
+            case "no-answer":
+                console.log("No Answer...");
+                events.emit("disconnect", request.body.CallSid);
+                break;
             case "failed":
                 console.log("Failed...");
+                events.emit("disconnect", request.body.CallSid);
+                break;
             case "completed":
                 events.emit("disconnect", request.body.CallSid);
                 break;

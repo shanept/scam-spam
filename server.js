@@ -7,6 +7,7 @@ module.exports = (function(e) {
     var events = e;
 
     app.use(bp.urlencoded({ extended: true }));
+    app.use(express.static('static'));
 
     app.post('/handler.xml', (request, response) => {
         response.sendFile(path.resolve('./handler.xml'));

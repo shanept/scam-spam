@@ -37,12 +37,12 @@ module.exports = (function(e) {
 
         response.send('');
     });
-    
+
     app.listen(3000, (err) => {
         if (err) {
             return console.error('Something went wrong!', err);
         }
-    
+
         console.log('Server is listening on port 3000');
     });
 });

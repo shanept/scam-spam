@@ -49,7 +49,8 @@ function createCall() {
             "answered"
         ]
     })
-    .then((message) => handleCall(message));
+    .then((message) => handleCall(message))
+    .catch((error)  => console.error(error.message));
 }
 
 events.emit('init');
